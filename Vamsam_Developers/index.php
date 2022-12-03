@@ -2,54 +2,154 @@
 <?php include "header.php" ?>
 <?php include "nav.html"?>
 
+<style>
+  #land_btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  button{
+    margin:5px;
+    margin-right:5px; 
+    margin-left:5px;
+  }
+</style>
 </head>
 <body>
 <!-- body -->
 <img src="image/vamsam.jpg" alt="vamsam" style="height: 700px; width:100%">
 
-<div class="container" id=LandView>
-    <h1 class="text-center" >Land Details</h1>
-        <table class="table table-striped table-bordered table-hover">
-          <thead class="table-dark">
-            <tr>
-              <th  scope="col">ID</th>
-              <th  scope="col">Username</th>
-              <th  scope="col">Email</th>
-              <th  scope="col"> Password</th>
-              <th  scope="col" colspan="3" class="text-center">Land View</th>
-            </tr>  
-          </thead>
-            <tbody>
-              <tr>
- 
-          <?php
-            $query="SELECT * FROM users";               // SQL query to fetch all table data
-            $view_users= mysqli_query($conn,$query);    // sending the query to the database
+  <h1 class="text-center" >Land Details</h1>
+<img src="image/land.jpg" alt="vamsam" style="height: 700px; width:100%">    
 
-            //  displaying all the data retrieved from the database using while loop
-            while($row= mysqli_fetch_assoc($view_users)){
-              $id = $row['id'];                
-              $user = $row['username'];        
-              $email = $row['email'];         
-              $pass = $row['password'];        
-
-              echo "<tr >";
-              echo " <th scope='row' >{$id}</th>";
-              echo " <td > {$user}</td>";
-              echo " <td > {$email}</td>";
-              echo " <td >{$pass} </td>";
-
-              echo " <td class='text-center'> <a href='view360.php?user_id={$id}' class='btn btn-primary'> <i class='bi bi-eye'></i> View</a> </td>";
-
-              echo " <td class='text-center' > <a href='https://wa.me/9360305239' class='btn btn-secondary'><i class='bi bi-pencil'></i> REGISTER</a> </td>";
-
-              echo " </tr> ";
-                  }  
-                ?>
-              </tr>  
-            </tbody>
-        </table>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th  scope="col" colspan="6" class="text-center">Lands with their respective numbers</th>
+    </tr>  
+  </thead>
+</table>
+<div  id="land_btns">
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn " id="608" onclick="window.location='view360.php?landid=608'">608 <br> view</button>
+    <button type="button" class="btn " id="609" onclick="window.location='view360.php?landid=609'">609 <br> view</button>
+    <button type="button" class="btn " id="610" onclick="window.location='view360.php?landid=610'">610 <br> view</button>
+    <button type="button" class="btn " id="611" onclick="window.location='view360.php?landid=611'">611 <br> view</button>
+    <button type="button" class="btn " id="612" onclick="window.location='view360.php?landid=612'">612 <br> view</button>
+    <button type="button" class="btn " id="613" onclick="window.location='view360.php?landid=613'">613 <br> view</button>
+    <button type="button" class="btn " id="614" onclick="window.location='view360.php?landid=614'">614 <br> view</button>
+    <button type="button" class="btn " id="615" onclick="window.location='view360.php?landid=615'">615 <br> view</button>
+    <button type="button" class="btn " id="616" onclick="window.location='view360.php?landid=616'">616 <br> view</button>
+    <button type="button" class="btn " id="617" onclick="window.location='view360.php?landid=617'">617 <br> view</button>
+    <button type="button" class="btn " id="618" onclick="window.location='view360.php?landid=618'">618 <br> view</button>
+    <button type="button" class="btn " id="619" onclick="window.location='view360.php?landid=619'">619 <br> view</button>
   </div>
+</div>
 
-<!-- Footer -->
-<?php include "footer.php" ?>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn " id="620" onclick="window.location='view360.php?landid=620'">620 <br> view</button>
+    <button type="button" class="btn " id="621" onclick="window.location='view360.php?landid=621'">621 <br> view</button>
+    <button type="button" class="btn " id="622" onclick="window.location='view360.php?landid=622'">622 <br> view</button>
+    <button type="button" class="btn " id="623" onclick="window.location='view360.php?landid=623'">623 <br> view</button>
+    <button type="button" class="btn " id="624" onclick="window.location='view360.php?landid=624'">624 <br> view</button>
+    <button type="button" class="btn " id="625" onclick="window.location='view360.php?landid=625'">625 <br> view</button>
+    <button type="button" class="btn " id="626" onclick="window.location='view360.php?landid=626'">626 <br> view</button>
+    <button type="button" class="btn " id="627" onclick="window.location='view360.php?landid=627'">627 <br> view</button>
+    <button type="button" class="btn " id="628" onclick="window.location='view360.php?landid=628'">628 <br> view</button>
+    <button type="button" class="btn " id="629" onclick="window.location='view360.php?landid=629'">629 <br> view</button>
+    <button type="button" class="btn " id="630" onclick="window.location='view360.php?landid=630'">630 <br> view</button>
+    <button type="button" class="btn " id="631" onclick="window.location='view360.php?landid=631'">631 <br> view</button>
+</div>
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  
+    <button type="button" class="btn " id="632" onclick="window.location='view360.php?landid=632'">632 <br> view</button>
+    <button type="button" class="btn " id="633" onclick="window.location='view360.php?landid=633'">633 <br> view</button>
+    <button type="button" class="btn " id="634" onclick="window.location='view360.php?landid=634'">634 <br> view</button>
+    <button type="button" class="btn " id="635" onclick="window.location='view360.php?landid=635'">635 <br> view</button>
+    <button type="button" class="btn " id="636" onclick="window.location='view360.php?landid=636'">636 <br> view</button>
+    <button type="button" class="btn " id="637" onclick="window.location='view360.php?landid=637'">637 <br> view</button>
+    <button type="button" class="btn " id="638" onclick="window.location='view360.php?landid=638'">638 <br> view</button>
+    <button type="button" class="btn " id="639" onclick="window.location='view360.php?landid=639'">639 <br> view</button>
+    <button type="button" class="btn " id="640" onclick="window.location='view360.php?landid=640'">640 <br> view</button>
+    <button type="button" class="btn " id="641" onclick="window.location='view360.php?landid=641'">641 <br> view</button>
+    <button type="button" class="btn " id="642" onclick="window.location='view360.php?landid=642'">642 <br> view</button>
+    <button type="button" class="btn " id="643" onclick="window.location='view360.php?landid=643'">643 <br> view</button>
+</div>
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  
+    <button type="button" class="btn " id="644" onclick="window.location='view360.php?landid=644'">644 <br> view</button>
+    <button type="button" class="btn " id="645" onclick="window.location='view360.php?landid=645'">645 <br> view</button>
+    <button type="button" class="btn " id="646" onclick="window.location='view360.php?landid=646'">646 <br> view</button>
+    <button type="button" class="btn " id="647" onclick="window.location='view360.php?landid=647'">647 <br> view</button>
+    <button type="button" class="btn " id="648" onclick="window.location='view360.php?landid=648'">648 <br> view</button>
+    <button type="button" class="btn " id="649" onclick="window.location='view360.php?landid=649'">649 <br> view</button>
+    <button type="button" class="btn " id="650" onclick="window.location='view360.php?landid=650'">650 <br> view</button>
+    <button type="button" class="btn " id="651" onclick="window.location='view360.php?landid=651'">651 <br> view</button>
+    <button type="button" class="btn " id="652" onclick="window.location='view360.php?landid=652'">652 <br> view</button>
+    <button type="button" class="btn " id="653" onclick="window.location='view360.php?landid=653'">653 <br> view</button>
+    <button type="button" class="btn " id="654" onclick="window.location='view360.php?landid=654'">654 <br> view</button>
+    <button type="button" class="btn " id="655" onclick="window.location='view360.php?landid=655'">655 <br> view</button>
+</div>
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  
+    <button type="button" class="btn " id="656" onclick="window.location='view360.php?landid=656'">656 <br> view</button>
+    <button type="button" class="btn " id="657" onclick="window.location='view360.php?landid=657'">657 <br> view</button>
+    <button type="button" class="btn " id="658" onclick="window.location='view360.php?landid=658'">658 <br> view</button>
+    <button type="button" class="btn " id="659" onclick="window.location='view360.php?landid=659'">659 <br> view</button>
+    <button type="button" class="btn " id="660" onclick="window.location='view360.php?landid=660'">660 <br> view</button>
+    <button type="button" class="btn " id="661" onclick="window.location='view360.php?landid=661'">661 <br> view</button>
+    <button type="button" class="btn " id="662" onclick="window.location='view360.php?landid=662'">662 <br> view</button>
+    <button type="button" class="btn " id="663" onclick="window.location='view360.php?landid=663'">663 <br> view</button>
+    <button type="button" class="btn " id="664" onclick="window.location='view360.php?landid=664'">664 <br> view</button>
+    <button type="button" class="btn " id="665" onclick="window.location='view360.php?landid=665'">665 <br> view</button>
+    <button type="button" class="btn " id="666" onclick="window.location='view360.php?landid=666'">666 <br> view</button>
+    <button type="button" class="btn " id="667" onclick="window.location='view360.php?landid=667'">667 <br> view</button>
+</div>
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  
+    <button type="button" class="btn " id="668" onclick="window.location='view360.php?landid=668'">668 <br> view</button>
+    <button type="button" class="btn " id="669" onclick="window.location='view360.php?landid=669'">669 <br> view</button>
+    <button type="button" class="btn " id="670" onclick="window.location='view360.php?landid=670'">670 <br> view</button>
+    <button type="button" class="btn " id="671" onclick="window.location='view360.php?landid=671'">671 <br> view</button>
+    <button type="button" class="btn " id="672" onclick="window.location='view360.php?landid=672'">672 <br> view</button>
+    <button type="button" class="btn " id="673" onclick="window.location='view360.php?landid=673'">673 <br> view</button>
+    <button type="button" class="btn " id="674" onclick="window.location='view360.php?landid=674'">674 <br> view</button>
+    <button type="button" class="btn " id="675" onclick="window.location='view360.php?landid=675'">675 <br> view</button>
+    <button type="button" class="btn " id="676" onclick="window.location='view360.php?landid=676'">676 <br> view</button>
+    <button type="button" class="btn " id="677" onclick="window.location='view360.php?landid=677'">677 <br> view</button>
+    <button type="button" class="btn " id="678" onclick="window.location='view360.php?landid=678'">678 <br> view</button>
+    <button type="button" class="btn " id="679" onclick="window.location='view360.php?landid=679'">679 <br> view</button>
+
+  </div>
+</div>
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  
+    <button type="button" class="btn " id="680" onclick="window.location='view360.php?landid=680'">680 <br> view</button>
+    <button type="button" class="btn " id="681" onclick="window.location='view360.php?landid=681'">681 <br> view</button>
+</div>
+</div>
+<?php include "color.php"?>
+</div>
+</div>
+
+
+   
+</div>
+</body>
+</html>

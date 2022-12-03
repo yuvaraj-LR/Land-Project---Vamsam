@@ -6,8 +6,9 @@
 
 </head>
 <body>
+	<?php $landid=$_GET["landid"]?>
 	<a-scene>
-	<img id="panorama" src="<?php echo "image/room.jpeg"?>"/>
+	<img id="panorama" src="<?php echo "image/l".$landid.".jpeg"?>"/>
 	<a-sky src="#panorama" rotation="0 -90 0"></a-sky>
 	</a-scene>
 
