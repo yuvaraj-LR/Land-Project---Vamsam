@@ -5,10 +5,13 @@
 
 <?php
    // checking if the variable is set or not and if set adding the set data value to variable userid
-   if(isset($_GET['user_id']))
+   
+   if(!isset($_GET['user_id']))
     {
-      $userid = $_GET['user_id']; 
+    header("Location: ../login.php");
     }
+    $userid = $_GET['user_id']; 
+
       // SQL query to select all the data from the table where id = $userid
       $query="SELECT * FROM land WHERE landid = '$userid' ";
       $view_users= mysqli_query($conn,$query);
@@ -40,18 +43,20 @@
         $rstatus = $_POST['rstatus'];  
       
       // SQL query to update the data in user table where the id = $userid 
-      $query = "UPDATE `land` SET `sqfeet`='$sqfeet',`prize`='$prize',`rphone`=$rphone,`rname`='$rname',`rstatus`='$rstatus' WHERE landid = '$userid'";
+      $query = "UPDATE `land` SET `sqfeet`='$sqfeet',`prize`='$prize',`rphone`=$rphone,`rdate`=current_timestamp(),`rname`='$rname',`rstatus`='$rstatus' WHERE landid = '$userid'";
       $update_user = mysqli_query($conn, $query);
       echo "<script type='text/javascript'>alert('User data updated successfully!')</script>";
     }             
 ?>
 
 <h1 class="text-center">Update Vamsam Registered People(Admin)</h1>
+
+<button type="button" class="btn btn-warning" onclick="window.location='../index.php' " style="display:block;">Home</button>
   <div class="container ">
     <form action="" method="post">
       <div class="form-group">
-        <label for="landid" >Land Id</label>
-        <input type="text" name="landid" class="form-control" value="<?php echo $id  ?>">
+      <b> <label for="landid" >Plot Id:</label>
+      <i><label for="landid"><?php echo $id  ?></label></i>
       </div>
 
       <div class="form-group">
@@ -60,17 +65,17 @@
       </div>
 
       <div class="form-group">
-        <label for="prize" >Prize</label>
+        <label for="prize" >Rate</label>
         <input type="text" name="prize"  class="form-control" value="<?php echo $prize  ?>">
       </div>    
 
       <div class="form-group">
-        <label for="rname" >Register Name</label>
+        <label for="rname" >Leader Name</label>
         <input type="text" name="rname"  class="form-control" value="<?php echo $rname  ?>" required=''>
       </div> 
       
       <div class="form-group">
-        <label for="rphone" >Register Phone Number </label>
+        <label for="rphone" >Phone Number </label>
         <input type="number" name="rphone"  class="form-control" value="<?php echo $rphone  ?>" required=''>
       </div>
 
@@ -92,13 +97,16 @@
       <div class="form-group">
          <input type="submit"  name="update" class="btn btn-primary mt-2" value="update">
       </div>
+       
     </form>    
   </div>
 
     <!-- a BACK button to go to the home page -->
-    <div class="container text-center mt-5">
-      <a href="home.php" class="btn btn-warning mt-5"> Back </a>
-    <div>
+    <form action="home.php?user=admin" id="back" method="post">
+        <div class="from-group text-center">
+            <input type="submit" class="btn btn-primary mt-5" value="Back">
+        </div>
+    </form>
 
 <!-- Footer -->
 <?php include "../footer.php" ?>

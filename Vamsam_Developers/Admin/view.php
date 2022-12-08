@@ -5,16 +5,18 @@
 
 <div class="container">
 <h1 class="text-center" >Vamsam Registered People (ADMIN)</h1>
+
+<button type="button" class="btn btn-warning" onclick="window.location='../index.php' " style="display:block;">Home</button>
   <table class="table table-striped table-bordered table-hover">
     <thead class="table-dark">
       <tr>
-        <th  scope="col">LandID</th>
+        <th  scope="col">Plot ID</th>
         <th  scope="col">Square Feet</th>
-        <th  scope="col">Prize</th>
-        <th  scope="col">Register Name</th>
-        <th  scope="col">Register Phone</th>
-        <th  scope="col">Register Date</th>
-        <th  scope="col"> Register Status</th>
+        <th  scope="col">Rate</th>
+        <th  scope="col">Leader Name</th>
+        <th  scope="col">Phone Number</th>
+        <th  scope="col">Date</th>
+        <th  scope="col">Status</th>
         </tr>  
     </thead>
       <tbody>
@@ -23,6 +25,10 @@
         <?php
         //  first we check using 'isset() function if the variable is set or not'
         //Processing form data when form is submitted
+        if(!isset($_GET['user_id']))
+    {
+    header("Location: ../login.php");
+    }
         if (isset($_GET['user_id'])) {
             $userid = $_GET['user_id']; 
 
@@ -67,10 +73,11 @@
       </tbody>
   </table>
 </div>
-   <!-- a BACK Button to go to pervious page -->
-  <div class="container text-center mt-5">
-    <a href="home.php" class="btn btn-warning mt-5"> Back </a>
-  <div>
 
+<form action="home.php?user=admin" id="back" method="post">
+        <div class="from-group text-center">
+            <input type="submit" class="btn btn-primary mt-5" value="Back">
+        </div>
+    </form>
 <!-- Footer -->
 <?php include "../footer.php" ?>
